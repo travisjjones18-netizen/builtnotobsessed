@@ -1,0 +1,65 @@
+---
+const items = [
+  'Train 4 days a week',
+  'Go out on the weekend',
+  'Eat the pizza',
+  'Drink the whiskey',
+  'Still look great',
+  'No guilt required',
+  'Progress over perfection',
+  'Balance is the goal',
+];
+
+const doubled = [...items, ...items];
+---
+
+<div class="ticker">
+  <div class="ticker-inner">
+    {doubled.map(item => (
+      <div class="ticker-item">
+        {item}<span class="ticker-dot"></span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .ticker {
+    background: var(--amber);
+    color: var(--ink);
+    padding: 0.6rem 0;
+    overflow: hidden;
+  }
+
+  .ticker-inner {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: ticker-scroll 24s linear infinite;
+  }
+
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ticker-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--ink);
+    opacity: 0.4;
+    display: inline-block;
+  }
+</style>

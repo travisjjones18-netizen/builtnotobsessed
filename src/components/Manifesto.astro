@@ -1,0 +1,67 @@
+---
+---
+
+<section class="manifesto">
+  <div class="manifesto-bg-text">BALANCE</div>
+  <div class="manifesto-content">
+    <p class="manifesto-quote">
+      "The goal was never a perfect body. The goal was a body that lets you do
+      <em>everything</em> — lift heavy, hike far, dance late, eat well, drink freely —
+      and wake up the next day ready to do it again."
+    </p>
+    <div class="manifesto-attr">— The Built Not Obsessed Manifesto</div>
+  </div>
+</section>
+
+<style>
+  .manifesto {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .manifesto-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 18rem;
+    color: rgba(15, 14, 13, 0.04);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .manifesto-content {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .manifesto-quote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  .manifesto-quote em {
+    color: var(--rust);
+    font-style: normal;
+  }
+
+  .manifesto-attr {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+</style>

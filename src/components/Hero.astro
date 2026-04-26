@@ -1,0 +1,174 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-number">80/20</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">The anti-perfectionist fitness philosophy</div>
+    <h1 class="hero-headline">
+      BUILT
+      <span class="line-italic">not obsessed</span>
+      STRONG
+    </h1>
+    <p class="hero-sub">
+      Train hard. Lift heavy. Then go have a <strong>cold beer with your friends.</strong>
+      This is the fitness philosophy for people who want to look great — and actually enjoy living.
+    </p>
+    <div class="hero-actions">
+      <a href="#join" class="btn-primary">Start Training</a>
+      <a href="#philosophy" class="btn-ghost">Our Philosophy →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 2.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(15,14,13,0.3) 0%, rgba(15,14,13,0.85) 75%, #0f0e0d 100%),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(200,131,42,0.03) 0px,
+        rgba(200,131,42,0.03) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,131,42,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,131,42,0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .hero-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: clamp(180px, 30vw, 380px);
+    color: rgba(200,131,42,0.06);
+    line-height: 1;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .hero-headline {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: clamp(64px, 10vw, 140px);
+    line-height: 0.92;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--cream);
+  }
+
+  .line-italic {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 0.65em;
+    font-weight: 400;
+    display: block;
+    color: var(--warm);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-sub strong {
+    color: var(--cream);
+    font-weight: 400;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: var(--ink);
+    padding: 0.9rem 2rem;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-primary:hover {
+    background: var(--amber-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    color: var(--cream);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(245,240,232,0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+  }
+</style>

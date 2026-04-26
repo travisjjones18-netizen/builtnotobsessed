@@ -1,0 +1,196 @@
+---
+const pillars = [
+  { num: '01', label: 'Smart Programming' },
+  { num: '02', label: 'Flexible Nutrition' },
+  { num: '03', label: 'Recovery That Fits Life' },
+  { num: '04', label: "The Social Lifter's Guide" },
+  { num: '05', label: 'Mindset & Consistency' },
+];
+---
+
+<section id="balance" class="pillars-section">
+  <div class="pillars-inner">
+    <div class="section-label">The system</div>
+    <div class="pillars-layout">
+      <div class="pillar-left">
+        <h2 class="pillars-headline">HOW IT<br/>WORKS</h2>
+        <ul class="pillar-list">
+          {pillars.map(p => (
+            <li class="pillar-item">
+              <span class="pillar-num">{p.num}</span>
+              <span class="pillar-label">{p.label}</span>
+              <span class="pillar-arrow">→</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="pillar-feature">
+        <div class="pillar-feature-label">Featured pillar</div>
+        <h3 class="pillar-feature-title">Flexible Nutrition</h3>
+        <p class="pillar-feature-text">
+          We don't do meal plans with six tupperware containers. We teach you how food
+          actually works — then show you how to enjoy a steak dinner, a round of drinks,
+          and Sunday brunch without undoing a week of training.
+        </p>
+        <div class="pillar-stats">
+          <div class="pstat">
+            <div class="pstat-num">80%</div>
+            <div class="pstat-label">on track, always</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num">20%</div>
+            <div class="pstat-label">is yours to live</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num">0</div>
+            <div class="pstat-label">guilt attached</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pillars-section {
+    background: rgba(200, 131, 42, 0.04);
+    padding: 6rem 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--amber);
+    opacity: 0.5;
+  }
+
+  .pillars-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .pillars-headline {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: clamp(42px, 6vw, 80px);
+    letter-spacing: 0.04em;
+    margin-bottom: 3rem;
+    line-height: 1;
+    color: var(--cream);
+  }
+
+  .pillar-list {
+    list-style: none;
+  }
+
+  .pillar-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(200, 131, 42, 0.15);
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .pillar-item:hover .pillar-arrow {
+    color: var(--amber);
+    transform: translateX(3px);
+  }
+
+  .pillar-num {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 1.2rem;
+    color: var(--amber);
+    opacity: 0.6;
+    flex-shrink: 0;
+    min-width: 2rem;
+  }
+
+  .pillar-label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--cream);
+    flex: 1;
+  }
+
+  .pillar-arrow {
+    color: var(--muted);
+    transition: all 0.2s;
+    margin-left: auto;
+  }
+
+  .pillar-feature {
+    background: rgba(200, 131, 42, 0.08);
+    border: 1px solid rgba(200, 131, 42, 0.2);
+    padding: 2.5rem;
+    border-radius: 2px;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .pillar-feature-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .pillar-feature-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--cream);
+  }
+
+  .pillar-feature-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .pillar-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(200, 131, 42, 0.2);
+  }
+
+  .pstat-num {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 2.4rem;
+    color: var(--amber);
+    line-height: 1;
+  }
+
+  .pstat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .pillars-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .pillar-feature { position: static; }
+  }
+</style>

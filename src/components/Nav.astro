@@ -1,0 +1,86 @@
+---
+const navLinks = [
+  { label: 'Training', href: '#training' },
+  { label: 'Nutrition', href: '#nutrition' },
+  { label: 'Balance', href: '#balance' },
+  { label: 'Community', href: '#community' },
+];
+---
+
+<nav id="nav">
+  <div class="logo">Lift<span>&nbsp;&amp;&nbsp;Live</span></div>
+  <ul class="nav-links">
+    {navLinks.map(link => (
+      <li><a href={link.href}>{link.label}</a></li>
+    ))}
+  </ul>
+  <a href="#join" class="nav-cta">Join Free</a>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(15, 14, 13, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(200, 131, 42, 0.2);
+    transition: background 0.3s;
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+  }
+
+  .logo span {
+    color: var(--cream);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--amber);
+  }
+
+  .nav-cta {
+    background: var(--amber);
+    color: var(--ink);
+    padding: 0.5rem 1.25rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--amber-light);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+  }
+</style>

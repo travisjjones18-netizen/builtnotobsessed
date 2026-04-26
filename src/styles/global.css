@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0f0e0d;
+  --cream: #f5f0e8;
+  --warm: #e8dcc8;
+  --amber: #c8832a;
+  --amber-light: #e8a840;
+  --rust: #9e3b1f;
+  --sage: #5a7a5c;
+  --muted: #7a7268;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-amber text-ink px-8 py-4 text-xs font-medium tracking-widest uppercase transition-all duration-200 hover:bg-amber-light hover:-translate-y-px;
+    border-radius: 2px;
+  }
+
+  .btn-ghost {
+    @apply text-cream text-xs font-medium tracking-widest uppercase no-underline flex items-center gap-2 transition-all duration-200 hover:text-amber;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.3);
+    padding-bottom: 2px;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--amber);
+  }
+
+  .section-label {
+    @apply text-amber font-medium flex items-center gap-3 mb-12;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--amber);
+    opacity: 0.5;
+  }
+}
