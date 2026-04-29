@@ -1,0 +1,407 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const days = [
+  {
+    day: 'Monday',
+    label: 'Day 1',
+    theme: 'Push',
+    mainLift: 'Bench Press',
+    mainLiftDesc: 'The king of upper body pushing strength. Build your chest, shoulders, and triceps with the movement that has stood the test of time.',
+    sets: '4 sets × 4–6 reps',
+    tag: 'Main Lift',
+    supporting: [
+      {
+        name: 'Overhead Press',
+        detail: '3 sets × 8–10 reps',
+        desc: 'Builds shoulder strength and stability. Complements the bench press and keeps your pressing balanced.'
+      },
+      {
+        name: 'Dips',
+        detail: '3 sets × 8–12 reps',
+        desc: 'A compound push that hammers the chest and triceps with your own bodyweight. Add weight when it gets easy.'
+      },
+    ]
+  },
+  {
+    day: 'Wednesday',
+    label: 'Day 2',
+    theme: 'Hinge',
+    mainLift: 'Deadlift',
+    mainLiftDesc: 'The most complete strength movement in existence. Pulls everything together — hamstrings, glutes, back, core, and grip. Nothing builds total body strength like pulling heavy from the floor.',
+    sets: '4 sets × 3–5 reps',
+    tag: 'Main Lift',
+    supporting: [
+      {
+        name: 'Romanian Deadlift',
+        detail: '3 sets × 8–10 reps',
+        desc: 'A lighter hinge variation that isolates the hamstrings and glutes. Perfect complement to the conventional deadlift.'
+      },
+      {
+        name: 'Barbell Row',
+        detail: '3 sets × 8–10 reps',
+        desc: 'Builds the upper back and lats. Keeps your pulling strength balanced with all the deadlift work.'
+      },
+    ]
+  },
+  {
+    day: 'Friday',
+    label: 'Day 3',
+    theme: 'Squat',
+    mainLift: 'Back Squat',
+    mainLiftDesc: 'The foundation of lower body strength. Squats build legs, glutes, and core while demanding more from your body than almost any other movement. There is no shortcut here — just the bar and the work.',
+    sets: '4 sets × 4–6 reps',
+    tag: 'Main Lift',
+    supporting: [
+      {
+        name: 'Bulgarian Split Squat',
+        detail: '3 sets × 8–10 reps each leg',
+        desc: 'A brutal single-leg movement that exposes imbalances and builds each leg independently. Harder than it looks.'
+      },
+      {
+        name: 'Goblet Squat',
+        detail: '3 sets × 10–12 reps',
+        desc: 'A lighter squat variation that reinforces position and builds quad volume without taxing your spine.'
+      },
+    ]
+  },
+  {
+    day: 'Sunday',
+    label: 'Day 4',
+    theme: 'Pull',
+    mainLift: 'Pull Ups',
+    mainLiftDesc: 'The ultimate test of relative strength. Pull ups build width, thickness, and grip while requiring nothing but a bar and your bodyweight. If you cannot do them yet, start with assisted — you will get there.',
+    sets: '4 sets × max reps (add weight when you hit 12)',
+    tag: 'Main Lift',
+    supporting: [
+      {
+        name: 'Pendlay Row',
+        detail: '3 sets × 6–8 reps',
+        desc: 'A strict barbell row from the floor. Builds raw upper back strength and teaches you to pull with your back, not your arms.'
+      },
+      {
+        name: 'Face Pulls',
+        detail: '3 sets × 12–15 reps',
+        desc: 'Keeps your shoulders healthy and your posture strong. One of the most underrated movements in any program.'
+      },
+    ]
+  },
+];
+---
+
+<Base
+  title="Training — Built to Enjoy"
+  description="A 4-day compound lifting program built around one big lift per day. Simple, effective, and leaves room for the rest of your life."
+>
+  <Nav />
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <div class="eyebrow">Training Program</div>
+      <h1 class="page-headline">
+        One big lift.<br/>
+        <span class="italic">Four days a week.</span>
+      </h1>
+      <p class="page-sub">Every session is built around one heavy compound movement. Master the basics, add weight over time, and leave room for the rest of your life. That is the whole program.</p>
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <div class="intro-layout">
+      <div class="intro-left">
+        <div class="section-label">The Approach</div>
+        <h2 class="intro-headline">Compound lifting.<br/><span class="italic">Nothing more.</span></h2>
+        <p class="intro-text">Every session starts with one major compound lift performed heavy — low reps, high effort, full focus. After that, two supporting compound movements fill out the session at moderate weight and higher reps.</p>
+        <p class="intro-text">No isolation work. No machines. No fluff. Just the movements that have built strong, capable bodies for decades — done consistently, with progressive overload, four days a week.</p>
+        <div class="intro-stats">
+          <div class="istat">
+            <div class="istat-num">4</div>
+            <div class="istat-label">days per week</div>
+          </div>
+          <div class="istat">
+            <div class="istat-num">3</div>
+            <div class="istat-label">lifts per session</div>
+          </div>
+          <div class="istat">
+            <div class="istat-num">60</div>
+            <div class="istat-label">minutes max</div>
+          </div>
+        </div>
+      </div>
+      <div class="intro-right">
+        <div class="week-strip">
+          <div class="week-day train">
+            <div class="wd-label">Mon</div>
+            <div class="wd-lift">Bench</div>
+          </div>
+          <div class="week-day rest">
+            <div class="wd-label">Tue</div>
+            <div class="wd-lift">Rest</div>
+          </div>
+          <div class="week-day train">
+            <div class="wd-label">Wed</div>
+            <div class="wd-lift">Deadlift</div>
+          </div>
+          <div class="week-day rest">
+            <div class="wd-label">Thu</div>
+            <div class="wd-lift">Rest</div>
+          </div>
+          <div class="week-day train">
+            <div class="wd-label">Fri</div>
+            <div class="wd-lift">Squat</div>
+          </div>
+          <div class="week-day enjoy">
+            <div class="wd-label">Sat</div>
+            <div class="wd-lift">Live</div>
+          </div>
+          <div class="week-day train">
+            <div class="wd-label">Sun</div>
+            <div class="wd-lift">Pull Ups</div>
+          </div>
+        </div>
+        <div class="week-legend">
+          <span class="legend-item train">Training day</span>
+          <span class="legend-item rest">Rest day</span>
+          <span class="legend-item enjoy">Live your life</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="program-section">
+    <div class="section-label">The Program</div>
+    {days.map((day, i) => (
+      <div class={`day-block ${i % 2 === 1 ? 'alt' : ''}`}>
+        <div class="day-header">
+          <div class="day-meta">
+            <span class="day-num">{day.label}</span>
+            <span class="day-separator">—</span>
+            <span class="day-name">{day.day}</span>
+          </div>
+          <div class="day-theme">{day.theme}</div>
+        </div>
+        <div class="day-content">
+          <div class="main-lift">
+            <div class="main-lift-tag">{day.tag}</div>
+            <h2 class="main-lift-name">{day.mainLift}</h2>
+            <p class="main-lift-desc">{day.mainLiftDesc}</p>
+            <div class="main-lift-sets">{day.sets}</div>
+          </div>
+          <div class="supporting-lifts">
+            <div class="supporting-label">Supporting Work</div>
+            {day.supporting.map(lift => (
+              <div class="supporting-card">
+                <div class="supporting-header">
+                  <div class="supporting-name">{lift.name}</div>
+                  <div class="supporting-detail">{lift.detail}</div>
+                </div>
+                <p class="supporting-desc">{lift.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="principles-section">
+    <div class="section-label">How to Progress</div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <h3 class="principle-title">Start lighter than you think</h3>
+        <p class="principle-text">The first two weeks should feel almost too easy. You are building the habit, learning the movements, and preparing your joints for the work ahead. Ego has no place in week one.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <h3 class="principle-title">Add weight slowly</h3>
+        <p class="principle-text">When you hit the top of your rep range on all sets, add a small amount of weight next session. For lower body lifts, add 5 to 10 lbs. For upper body, add 2.5 to 5 lbs. Small jumps compound over time.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <h3 class="principle-title">Form first, always</h3>
+        <p class="principle-text">A heavy squat with bad form builds injury, not muscle. Record yourself. Get feedback. Prioritize position over weight on the bar. The weight will come.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <h3 class="principle-title">Rest days are part of the program</h3>
+        <p class="principle-text">Three days off is not laziness — it is where the adaptation happens. Sleep, eat enough protein, and do not feel guilty about the couch on Tuesday. You earned it.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <div class="cta-text">
+      <span class="cta-sub">Ready to start</span>
+      Pick up the bar. Put it down. Repeat.
+    </div>
+    <a href="mailto:hello@built2enjoy.com" class="btn-dark">Get in Touch</a>
+  </div>
+
+  <Footer />
+</Base>
+
+<style>
+  :root {
+    --ink: #0f0e0d;
+    --cream: #f5f0e8;
+    --warm: #e8dcc8;
+    --amber: #c8832a;
+    --amber-light: #e8a840;
+    --muted: #7a7268;
+  }
+
+  .page-hero {
+    min-height: 65vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 8rem 2.5rem 5rem;
+    position: relative; overflow: hidden; background: var(--ink);
+  }
+
+  .page-hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(15,14,13,0.4) 0%, rgba(15,14,13,0.95) 100%);
+  }
+
+  .page-hero-content { position: relative; max-width: 800px; }
+
+  .eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--amber); font-weight: 500;
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--amber); }
+
+  .page-headline {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: clamp(56px, 9vw, 120px);
+    line-height: 0.92; letter-spacing: 0.03em;
+    color: var(--cream); margin-bottom: 1.5rem;
+  }
+
+  .italic {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic; font-weight: 400; font-size: 0.7em; color: var(--warm);
+  }
+
+  .page-sub {
+    font-size: 1rem; color: var(--muted);
+    max-width: 560px; line-height: 1.7; font-weight: 300;
+  }
+
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--amber); font-weight: 500;
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 3rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--amber); opacity: 0.5;
+  }
+
+  .intro-section { padding: 6rem 2.5rem; background: var(--ink); }
+
+  .intro-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+  .intro-headline {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1; color: var(--cream); margin-bottom: 2rem; letter-spacing: 0.03em;
+  }
+
+  .intro-text { font-size: 0.9rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 1.25rem; }
+
+  .intro-stats {
+    display: flex; gap: 2.5rem; margin-top: 2.5rem;
+    padding-top: 2rem; border-top: 1px solid rgba(200,131,42,0.2);
+  }
+
+  .istat-num { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 3rem; color: var(--amber); line-height: 1; }
+  .istat-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem; }
+
+  .week-strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: rgba(200,131,42,0.15); margin-bottom: 1rem; }
+
+  .week-day { padding: 1.25rem 0.5rem; text-align: center; background: var(--ink); }
+  .week-day.train { border-top: 2px solid var(--amber); }
+  .week-day.rest { border-top: 2px solid rgba(200,131,42,0.2); }
+  .week-day.enjoy { border-top: 2px solid #5a7a5c; }
+
+  .wd-label { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  .week-day.train .wd-label { color: var(--amber); }
+  .week-day.enjoy .wd-label { color: #5a7a5c; }
+
+  .wd-lift { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 0.85rem; color: var(--cream); letter-spacing: 0.05em; }
+
+  .week-legend { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .legend-item { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
+  .legend-item::before { content: ''; width: 12px; height: 2px; display: inline-block; }
+  .legend-item.train::before { background: var(--amber); }
+  .legend-item.rest::before { background: rgba(200,131,42,0.3); }
+  .legend-item.enjoy::before { background: #5a7a5c; }
+
+  .program-section { padding: 6rem 2.5rem; background: rgba(200,131,42,0.03); }
+
+  .day-block { border: 1px solid rgba(200,131,42,0.2); margin-bottom: 1.5px; transition: background 0.2s; }
+  .day-block.alt { background: rgba(200,131,42,0.02); }
+
+  .day-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 2.5rem; border-bottom: 1px solid rgba(200,131,42,0.15);
+  }
+
+  .day-meta { display: flex; align-items: center; gap: 1rem; }
+  .day-num { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 0.9rem; color: var(--amber); letter-spacing: 0.1em; }
+  .day-separator { color: rgba(200,131,42,0.3); }
+  .day-name { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); font-weight: 500; }
+  .day-theme { font-family: 'Playfair Display', Georgia, serif; font-size: 0.9rem; font-style: italic; color: var(--muted); }
+
+  .day-content { display: grid; grid-template-columns: 1fr 1.5fr; }
+
+  .main-lift { padding: 2.5rem; border-right: 1px solid rgba(200,131,42,0.15); }
+  .main-lift-tag { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amber); font-weight: 500; margin-bottom: 0.75rem; }
+  .main-lift-name { font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--cream); letter-spacing: 0.03em; line-height: 1; margin-bottom: 1rem; }
+  .main-lift-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 1.5rem; }
+  .main-lift-sets { display: inline-block; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--amber); font-weight: 500; border: 1px solid rgba(200,131,42,0.3); padding: 0.4rem 1rem; border-radius: 2px; }
+
+  .supporting-lifts { padding: 2.5rem; }
+  .supporting-label { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 1.5rem; }
+
+  .supporting-card { padding: 1.25rem 0; border-bottom: 1px solid rgba(200,131,42,0.1); }
+  .supporting-card:last-child { border-bottom: none; }
+
+  .supporting-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; }
+  .supporting-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: var(--cream); }
+  .supporting-detail { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--amber); font-weight: 500; white-space: nowrap; }
+  .supporting-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; font-weight: 300; }
+
+  .principles-section { padding: 6rem 2.5rem; background: var(--ink); }
+
+  .principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid rgba(200,131,42,0.2); }
+
+  .principle { padding: 3rem 2.5rem; border-right: 1px solid rgba(200,131,42,0.2); border-bottom: 1px solid rgba(200,131,42,0.2); position: relative; transition: background 0.3s; }
+  .principle:nth-child(even) { border-right: none; }
+  .principle:nth-child(3), .principle:nth-child(4) { border-bottom: none; }
+  .principle:hover { background: rgba(200,131,42,0.04); }
+
+  .principle-num { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 4rem; color: rgba(200,131,42,0.1); position: absolute; top: 1rem; right: 1.5rem; line-height: 1; }
+  .principle-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700; color: var(--cream); margin-bottom: 0.75rem; }
+  .principle-text { font-size: 0.875rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+  .cta-strip { background: var(--amber); padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .cta-text { font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--ink); line-height: 1; }
+  .cta-sub { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 0.3em; font-weight: 400; font-style: italic; opacity: 0.7; }
+  .btn-dark { background: var(--ink); color: var(--amber); padding: 1rem 2.5rem; border-radius: 2px; font-size: 0.75rem; letter-spacing: 0.15em; font-weight: 500; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; flex-shrink: 0; }
+  .btn-dark:hover { opacity: 0.85; }
+
+  @media (max-width: 768px) {
+    .intro-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .week-strip { grid-template-columns: repeat(4, 1fr); }
+    .day-content { grid-template-columns: 1fr; }
+    .main-lift { border-right: none; border-bottom: 1px solid rgba(200,131,42,0.15); }
+    .principles-grid { grid-template-columns: 1fr; }
+    .principle:nth-child(even) { border-right: 1px solid rgba(200,131,42,0.2); }
+    .principle:nth-child(3) { border-bottom: 1px solid rgba(200,131,42,0.2); }
+  }
+</style>
